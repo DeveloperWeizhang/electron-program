@@ -1,0 +1,33 @@
+<!--
+ * @Copyright (c): Knowdee All rights reserved.
+ * @Description: Type your file description
+ * @Author: Type your email address
+ * @LastEditors: wangwz@knowdee.com
+ * @Date: 2024-01-11 18:03:33
+ * @LastEditTime: 2024-01-11 20:33:40
+ * @FilePath: /my-electron-app/index.html
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <title>王维璋的个人应用</title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <h1>Hello from Electron renderer!</h1>
+    <p>👋</p>
+    <p id="info"></p>
+    <script src="./renderer.js"></script>
+  </body>
+</html>
