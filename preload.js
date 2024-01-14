@@ -7,8 +7,9 @@
  * @Author: wangwz@knowdee.com
  * @LastEditors: wangwz@knowdee.com
  * @Date: 2024-01-11 20:26:49
- * @LastEditTime: 2024-01-11 21:18:49
+ * @LastEditTime: 2024-01-14 19:09:00
  * @FilePath: /my-electron-app/preload.js
+ * // todo？: ipcRenderer 中 invoke 和 send 的区别
  */
 const { contextBridge, ipcRenderer } = require('electron')
 
@@ -39,4 +40,11 @@ contextBridge.exposeInMainWorld('info', {
     }]
   }
   // 除函数之外，我们也可以暴露变量
+})
+
+// 通过contextBridge接口，将特权接口暴露给渲染器
+contextBridge.exposeInMainWorld('electronAPI', {
+  setTitle: (title) => ipcRenderer.send('set-title', title),
+  openFile: () => ipcRenderer.invoke('dialog:openFile'),
+  onUpdateCounter: (callback) => ipcRenderer.on('update-counter', (_event, value) => callback(value))
 })

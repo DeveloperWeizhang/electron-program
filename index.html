@@ -1,10 +1,10 @@
 <!--
  * @Copyright (c): Knowdee All rights reserved.
  * @Description: Type your file description
- * @Author: Type your email address
+ * @Author: wangwz@knowdee.com
  * @LastEditors: wangwz@knowdee.com
  * @Date: 2024-01-11 18:03:33
- * @LastEditTime: 2024-01-11 20:33:40
+ * @LastEditTime: 2024-01-14 19:17:14
  * @FilePath: /my-electron-app/index.html
 -->
 <!DOCTYPE html>
@@ -28,6 +28,13 @@
     <h1>Hello from Electron renderer!</h1>
     <p>👋</p>
     <p id="info"></p>
+    <input type="text" id="title">
+    <button id="btn">设置窗口标题</button>
+    <!-- 点击按钮打开文件上传对话框 -->
+    <button type="button" id="btn-file">Open a File</button>
+    File path: <strong id="filePath"></strong>
+    <!-- 主线程到渲染器进程 -->
+    当前的值: <strong id="counter">0</strong>
     <script src="./renderer.js"></script>
   </body>
 </html>
